@@ -3,12 +3,11 @@ body{
   }
 
  p{
-    background-color: rgba(0, 0, 0, 0.596);
-    color: rgb(255, 255, 255);
+    background-color: white;
+    color: rgb(0, 0, 0);
     font-family: fantasy;
-    margin:60px; /* para que se separe de los lados */
-    padding: 25px; /* distancia del texto al bloque */
-    border-radius: 25px; /* cuanto quiero q esten redondeados los lados */
+    margin:30px; /* para que se separe de los lados */
+    padding: 5px; /* distancia del texto al bloque */
  }
   h2{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -21,3 +20,12 @@ body{
     letter-spacing: 30px;
     font-family: fantasy;
   }
+  #dcha{
+    float: right;
+    text-align: center;
+    width: 35%;
+    border-radius: 25px;
+    background-color: rgb(0, 0, 0);
+    min-height: 50vh;
+  }
+
