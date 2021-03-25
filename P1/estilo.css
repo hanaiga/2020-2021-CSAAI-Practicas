@@ -10,3 +10,14 @@ body{
     padding: 25px; /* distancia del texto al bloque */
     border-radius: 25px; /* cuanto quiero q esten redondeados los lados */
  }
+  h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 8px; /* separado entre letras */
+    font-size: 30px;
+  }
+  .titulo{
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 30px;
+    font-family: fantasy;
+  }
