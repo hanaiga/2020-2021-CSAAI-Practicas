@@ -1,4 +1,12 @@
 body{
     background-image: url("fondocv.jpg");
   }
-  
+
+ p{
+    background-color: rgba(0, 0, 0, 0.596);
+    color: rgb(255, 255, 255);
+    font-family: fantasy;
+    margin:60px; /* para que se separe de los lados */
+    padding: 25px; /* distancia del texto al bloque */
+    border-radius: 25px; /* cuanto quiero q esten redondeados los lados */
+ }
