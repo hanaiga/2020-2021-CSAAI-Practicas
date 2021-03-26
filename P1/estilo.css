@@ -48,11 +48,11 @@ body{
     min-height: 50vh;
 }
 .btn h1{
-  color: black;
+  background-color: black;
+  color: white;
   font-family: fantasy;
   font-size: 30px;
-  padding-left: 20px;
-  text-align: left;
+  padding: 20px;
 }
 .btn button{
  padding: 10px;
@@ -63,6 +63,5 @@ body{
  font-family: fantasy;
  margin-top: 5px;
  margin-bottom: 45px;
- margin-left: 200px;
  float: center;
 }
