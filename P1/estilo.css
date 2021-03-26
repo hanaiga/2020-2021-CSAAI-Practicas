@@ -10,6 +10,7 @@ body{
     padding: 5px; /* distancia del texto al bloque */
  }
   h2{
+    color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 8px; /* separado entre letras */
     font-size: 30px;
@@ -27,5 +28,15 @@ body{
     border-radius: 25px;
     background-color: rgb(0, 0, 0);
     min-height: 50vh;
+  }
+  ul{
+    background-color: white;
+    color: black;
+    font-family: fantasy;
+    font-size: 12px;
+    padding: 30px;
+    list-style-type: none;
+    text-align: left;
+    padding-left: 20px;
   }
 
