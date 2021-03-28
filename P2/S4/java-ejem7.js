@@ -3,6 +3,6 @@ console.log('Ejecutando js ...')
 
 const prueba = document.getElementById('prueba')
 
-prueba.onclick = function() {
+prueba.onclick = () => {
     console.log('se ha hecho click sobre el parrafo')
 }
