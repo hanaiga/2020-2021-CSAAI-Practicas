@@ -4,7 +4,7 @@ console.log('Ejecutando js...')
 
 const prueba = document.getElementById('prueba')
 
-prueba.onclick = function click(){
+prueba.onclick = function (){
 
     console.log('este mensaje sale cada vez que se clicke el parrafo')
 }
