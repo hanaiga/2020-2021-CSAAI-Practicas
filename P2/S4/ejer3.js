@@ -6,7 +6,7 @@ btn.onclick = () => {
     console.log('se ha tocado boton')
 
     toca.innerHTML = "!SE AÑADE UN UNO!"
+    toca.innerHTML += "1"
     
 }
 
-toca.innerHTML += "1"
