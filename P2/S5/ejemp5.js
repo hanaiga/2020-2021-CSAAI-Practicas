@@ -28,16 +28,16 @@ const c1 = new counter(gui.display1);
 const c2 = new counter(gui.display2);
 
 gui.boton_inc1.onclick = () =>{
-    counter.inc(1)
+    c1.inc(1)
 }
 
 gui.boton_dec1.onclick = () =>{
-    counter.inc(-1)
+    c1.inc(-1)
 }
 gui.boton_inc2.onclick = () =>{
-    counter.inc(1)
+    c2.inc(1)
 }
 
 gui.boton_dec2.onclick = () =>{
-    counter.inc(-1)
+    c2.inc(-1)
 }
