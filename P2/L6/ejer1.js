@@ -17,7 +17,7 @@ boton2.onclick = () =>{
 }
 
 suma.onclick = () =>{
-    display.innerHTML += "+";
+    display.innerHTML += "-";
 }
 
 igual.onclick = () =>{
