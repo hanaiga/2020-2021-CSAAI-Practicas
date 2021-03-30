@@ -4,7 +4,7 @@ const botones = document.getElementsByClassName("digito");
 
 function digito(Value){
 
-    console.log("valor: " + value)
+    console.log("valor: " + value);
 }
 
 for (let boton of botones) {
