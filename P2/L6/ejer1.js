@@ -24,6 +24,6 @@ igual.onclick = () =>{
     display.innerHTML = eval(display.innerHTML);
 }
 
-boton1.onclick = () =>{
+clear.onclick = () =>{
     display.innerHTML = "0";
 }
