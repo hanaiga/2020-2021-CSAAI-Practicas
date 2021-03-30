@@ -21,7 +21,7 @@ class counter {
         // actualizo el contador y lo muestro en display
        inc(value) {
             this.valor += value;
-            this,display.innerHTML = this.valor;
+            this.display.innerHTML = this.valor;
         }
 }
     // creo los objetos contadores
