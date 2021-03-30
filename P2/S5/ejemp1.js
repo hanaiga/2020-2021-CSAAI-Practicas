@@ -1,21 +1,20 @@
-//-- Contador de clicks de boton
-
 console.log("Ejecutando JS...");
 
-//-- Acceder a los elementos del DOM
 const display = document.getElementById("display");
+
 const boton = document.getElementById("boton");
 
-//-- Contador de clicks
+// inicializar contador
+
 let cont = 0;
 
-//-- Configurar retrollamada del boton
+// funcion para que vaya contando cada vez q se toque boton
+
 boton.onclick = () => {
-  console.log("Click!");
 
-  //-- Incrementar contador
-  cont += 1;
+    console.log("click!");
 
-  //-- Actualizar el display
-  display.innerHTML = cont;
+    cont += 1;
+
+    display.innerHTML = cont;
 }
