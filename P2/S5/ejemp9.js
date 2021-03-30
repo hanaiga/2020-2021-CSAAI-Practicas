@@ -2,7 +2,7 @@ console.log("Ejecutando JS...");
 
 const botones = document.getElementsByClassName("digito");
 
-function digito(Value){
+function digito(value){
 
     console.log("valor: " + value);
 }
