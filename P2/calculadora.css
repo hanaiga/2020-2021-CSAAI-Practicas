@@ -1,0 +1,35 @@
+body{
+    background-image: url('fondo.jpg');
+}
+
+#display{
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+}
+
+button{
+    background-image: url('btn.jpg');
+    border-width: medium;
+    border-color: rgb(255, 184, 237);
+    border: solid;
+    padding: 20px;
+    margin: 5px;
+    background-color: rgb(230, 24, 24);
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+.calculadora{
+    border-width: medium;
+    border-color: rgb(243, 171, 222);
+    border: solid;
+    border-radius: 15px;
+    width: 430px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin: auto;
+    font-weight: bolder;
+    font-size: 20px;
+}
