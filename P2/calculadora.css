@@ -87,9 +87,10 @@ h2{
     width: 430px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.7);
-    border-color:rgb(255, 184, 237);
+    border-color: black;
     font-family: "consolas";
     text-align: center;
+    margin: 100px;
     font-size: 20px;
 }
 body{
