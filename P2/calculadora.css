@@ -4,19 +4,82 @@
     padding: 20px;
     font-weight: bolder;
 }
-
-button{
-    background-image: url('btn.jpg');
-    border-width: medium;
-    border-color: rgb(255, 184, 237);
-    border: solid;
-    padding: 20px;
-    margin: 5px;
-    background-color: rgb(230, 24, 24);
-    font-weight: bolder;
-    font-size: 20px;
+h2{
+    font-family: fantasy;
+    text-align: center;
 }
+#igual{
+    border-radius: 10px;
+    background-color: rgb(255, 184, 226);
+    color: white;
+    padding: 55px;
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#delet{
+    border-radius: 10px;
+    background-color: rgb(176, 222, 240);
+    color: white;
+    font-weight: bolder;
+    margin-right: 8px;
+    margin-left: 4px;
+    padding: 10px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
+}
+#reset{
+    border-radius: 10px;
+    background-color: rgb(151, 252, 227);
+    color: white;
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.boton{
+    border-radius: 10px;
+    background-color: rgb(176, 188, 240);
+    color: white;
+    font-weight: bolder;
+    padding: 20px;
+    font-size: 15px;
+    margin-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+#coma{
+
+    border-radius: 10px;
+    background-color: rgb(176, 188, 240);
+    color: white;
+    font-weight: bolder;
+    padding: 20px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    
+}
+.oper{
+    border-radius: 10px;
+    background-color: rgb(212, 163, 235);
+    color: white;
+    padding: 24px;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 8px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+}
 .calculadora{
 
     border: solid;
@@ -24,6 +87,7 @@ button{
     width: 430px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.7);
+    border-color:rgb(255, 184, 237);
     font-family: "consolas";
     text-align: center;
     font-size: 20px;
