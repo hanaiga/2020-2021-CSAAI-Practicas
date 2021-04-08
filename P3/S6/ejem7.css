@@ -1,0 +1,12 @@
+canvas{
+    background-color: lightblue;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+}
+/* deshabilito la imagen para que no aparezca del html sino del JS */
+
+#logo{
+    display: none;
+}
