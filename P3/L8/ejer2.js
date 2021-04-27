@@ -51,19 +51,18 @@ function update(){
     ctx.strokeText("PUNTOS TOTALES: 0000", 20, 50);
     // dibujo los elementos
     ctx.beginPath();
+    
+    // dibujo la espefera
+    // coordenadas, radio, angulo inicial, angulo final
 
-    // le digo que dibuje un rectangulo en la coordenada 5,5 y de 100 *50
-        ctx.rect(x,y, 20,20);
+        ctx.arc(x, y, 10, 0, 2 *Math.PI);
+        ctx.strokeStyle = 'lightblue';
+        ctx.lineWidht = 3;
+        ctx.fillStyle = 'black';
 
-        // le digo el color de relleno
-        ctx.fillStyle = 'red';
-
-        // aplico el relleno
+        ctx.stroke();
         ctx.fill();
 
-        // muestro el contorno del rectangulo
-        ctx.stroke();
-        
     ctx.closePath();
     // que vuelva a ejecutar update cuando le toque
     requestAnimationFrame(update);
