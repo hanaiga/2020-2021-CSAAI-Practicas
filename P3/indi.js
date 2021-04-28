@@ -36,6 +36,20 @@ stop.onclick = () => {
 
 // cada vez que le doy a la tecla izda o dcha se me mueve el rectangulo 5 
 // la delimito para que no salga del cuadro de juego
+
+// tecla para ir a la Izda
+document.onkeydown = (e) => {
+    if (e.codeKey == "37" || x2 < 0 ){
+        console.log("estoy en izda");
+         x2 = x2 - 5;
+    } else if (e.codeKey == "39" ||x2 <= canvas.width - 80 ){
+        console.log("estoy en dcha");
+         x2 = x2 + 5;
+    }       
+}
+
+
+/*                movimiento usando botones 
 izda.onclick = () =>{
     if (x2 <0){
         x2 = x2 + 5;
@@ -52,6 +66,8 @@ dcha.onclick = () => {
     }
 
 }
+*/ 
+
 
 // esta es la funcion principal para animar
 function update(){
