@@ -13,6 +13,8 @@ const stop = document.getElementById("stop");
 const izda = document.getElementById("izda");
 const dcha = document.getElementById("dcha");
 
+const rebote_sound = new Audio('rebote.mp3');
+const raqueta_sound = new Audio('raqueta.mp3');
 
 let x = 190;
 // la y la pongo a 100 para que no rebote por encima del texto de vida o puntos
@@ -94,12 +96,24 @@ function update(){
     // le resto el tamaño del rectangulo para que no se vea como el rec sale
     if (x <0 || x >= canvas.width - 20 ){
         velx = -velx;
+        rebote_sound.currentTime = 0;
+        rebote_sound.play();
     }
     if (y <= 70 || y > canvas.height - 50){
         vely = -vely;
+        if (y <= 70){
+            rebote_sound.currentTime = 0;
+            rebote_sound.play();
+        } else if (y > canvas.height - 50){
+            raqueta_sound.currentTime = 0;
+            raqueta_sound.play();
+        }
+
     }
     x = x + velx;
     y = y + vely;
+
+
     // borro canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
         // vidas
