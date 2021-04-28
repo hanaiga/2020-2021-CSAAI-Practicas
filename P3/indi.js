@@ -32,7 +32,7 @@ function update(){
     if (x <0 || x >= canvas.width - 20 ){
         velx = -velx;
     }
-    if (y <= 70 || y > canvas.height - 20){
+    if (y <= 70 || y > canvas.height - 50){
         vely = -vely;
     }
     x = x + velx;
@@ -64,9 +64,28 @@ function update(){
         ctx.fill();
 
     ctx.closePath();
+
+    // dibujo la raqueta
+    ctx.beginPath();
+
+        // le digo que dibuje un rectangulo en la coordenada 5,5 y de 100 *50
+        ctx.rect(150,570, 80,15);
+
+            // le digo el color de relleno
+            ctx.fillStyle = 'black';
+
+            // aplico el relleno
+            ctx.fill();
+
+            // muestro el contorno del rectangulo
+            ctx.stroke();
+            
+    ctx.closePath();
+
     // que vuelva a ejecutar update cuando le toque
     requestAnimationFrame(update);
 }
+
 
 // llamo a la funion para que empieze a rular
 update();
