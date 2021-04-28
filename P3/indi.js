@@ -24,11 +24,12 @@ let vely = 0;
 let x2 = 150;
 
 // control de los botones
-
+/*
 start.onclick = () => {
      velx = 3;
      vely = 1;
 }
+*/
 stop.onclick = () => {
     velx = 0;
     vely = 0;
@@ -40,6 +41,9 @@ stop.onclick = () => {
 // tecla para ir a la Izda
 window.onkeydown = (e) => {
     switch (e.keyCode){
+        case 32:
+            velx = 3;
+            vely = 1; 
         case 37:
             if (x2 <0){
                 x2 = x2 + 5;
