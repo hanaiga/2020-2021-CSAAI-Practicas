@@ -100,15 +100,22 @@ function update(){
         rebote_sound.play();
     }
     if (y <= 70 || y > canvas.height - 50){
-        
         if (y <= 70){
+            console.log(y);
             vely = -vely;
             rebote_sound.currentTime = 0;
             rebote_sound.play();
         } else if (x >= x2){
+            console.log(x);
+            console.log(x2);
             vely = -vely;
             raqueta_sound.currentTime = 0;
             raqueta_sound.play();
+        } else {
+            velx = 0;
+            vely = 0;
+            x = 400;
+            y = 700;
         }
 
     }
