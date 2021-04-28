@@ -2,13 +2,16 @@ console.log("Ejecutando Js...");
 
 const canvas = document.getElementById("canvas");
 
+
 // el tamaño del canvas 
 canvas.width = 400;
 canvas.height = 600;
 
 const ctx = canvas.getContext("2d");
-
-// funcion para que se mueva el coso
+const start = document.getElementById("start");
+const stop = document.getElementById("stop");
+const izda = document.getElementById("izda");
+const dcha = document.getElementById("dcha");
 
 
 let x = 0;
@@ -16,10 +19,21 @@ let x = 0;
 let y = 100;
 
 // defino la velicidad en direccion x
-let velx = 3;
-let vely = 1;
+let velx = 0;
+let vely = 0;
+let velx5 = 0;
+let vely5 = 0;
 
+// control de los botones
 
+start.onclick = () => {
+     velx = 3;
+     vely = 1;
+}
+stop.onclick = () => {
+    velx = 0;
+    vely = 0;
+}
 
 
 // esta es la funcion principal para animar
@@ -89,3 +103,5 @@ function update(){
 
 // llamo a la funion para que empieze a rular
 update();
+
+
