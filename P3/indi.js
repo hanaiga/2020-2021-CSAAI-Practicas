@@ -21,6 +21,7 @@ let y = 550;
 // defino la velicidad en direccion x
 let velx = 0;
 let vely = 0;
+let x2 = 150;
 
 // control de los botones
 
@@ -33,11 +34,28 @@ stop.onclick = () => {
     vely = 0;
 }
 
+// cada vez que le doy a la tecla izda o dcha se me mueve el rectangulo 5 
+// la delimito para que no salga del cuadro de juego
+izda.onclick = () =>{
+    if (x2 <0){
+        x2 = x2 + 5;
+    } else{
+        x2 = x2 - 5;
+    }
+}
+
+dcha.onclick = () => {
+    if (x2 <= canvas.width - 80){
+        x2 = x2 + 5;
+    } else{
+        x2 = x2 - 5;
+    }
+
+}
 
 // esta es la funcion principal para animar
 function update(){
 
-    console.log("test");
     // ahora quiero que se mueva entonces defino el movimiento
     // para que no se salga del canvas y rebote
     // le resto el tamaño del rectangulo para que no se vea como el rec sale
@@ -61,7 +79,24 @@ function update(){
     ctx.font = "20px Arial";
     ctx.strokeStyle = 'yellow';
     ctx.strokeText("PUNTOS TOTALES: 0000", 20, 50);
-    // dibujo los elementos
+  
+     // dibujo la raqueta
+     ctx.beginPath();
+
+     // le digo que dibuje un rectangulo en la coordenada 5,5 y de 100 *50
+     ctx.rect(x2,570, 80,15);
+
+         // le digo el color de relleno
+         ctx.fillStyle = 'black';
+
+         // aplico el relleno
+         ctx.fill();
+
+         // muestro el contorno del rectangulo
+         ctx.stroke();
+         
+    ctx.closePath();
+
     ctx.beginPath();
     
     // dibujo la espefera
@@ -77,23 +112,7 @@ function update(){
 
     ctx.closePath();
 
-    // dibujo la raqueta
-    ctx.beginPath();
-
-        // le digo que dibuje un rectangulo en la coordenada 5,5 y de 100 *50
-        ctx.rect(150,570, 80,15);
-
-            // le digo el color de relleno
-            ctx.fillStyle = 'black';
-
-            // aplico el relleno
-            ctx.fill();
-
-            // muestro el contorno del rectangulo
-            ctx.stroke();
-            
-    ctx.closePath();
-
+   
     // que vuelva a ejecutar update cuando le toque
     requestAnimationFrame(update);
 }
