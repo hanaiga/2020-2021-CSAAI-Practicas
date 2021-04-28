@@ -41,10 +41,18 @@ stop.onclick = () => {
 window.onkeydown = (e) => {
     switch (e.keyCode){
         case 37:
-            x2 = x2 - 5;
+            if (x2 <0){
+                x2 = x2 + 5;
+            } else{
+                x2 = x2 - 5;
+            }
             break;
         case 39:
-            x2 = x2 + 5; 
+            if (x2 <= canvas.width - 80){
+                x2 = x2 + 5;
+            } else{
+                x2 = x2 - 5;
+            }
     }
 }
 
