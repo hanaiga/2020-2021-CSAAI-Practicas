@@ -38,16 +38,21 @@ stop.onclick = () => {
 // la delimito para que no salga del cuadro de juego
 
 // tecla para ir a la Izda
-document.onkeydown = (e) => {
-    if (e.codeKey == "37" || x2 < 0 ){
-        console.log("estoy en izda");
-         x2 = x2 - 5;
-    } else if (e.codeKey == "39" ||x2 <= canvas.width - 80 ){
-        console.log("estoy en dcha");
-         x2 = x2 + 5;
-    }       
+window.onkeydown = (e) => {
+    switch (e.keyCode){
+        case 37:
+            x2 = x2 - 5;
+            break;
+        case 39:
+            x2 = x2 + 5; 
+    }
 }
 
+window.onkeyup = (e) => {
+    if (e.keyCode == 37 || e.keyCode == 39){
+        x2 = x2;
+    }
+}
 
 /*                movimiento usando botones 
 izda.onclick = () =>{
