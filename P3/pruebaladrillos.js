@@ -123,7 +123,7 @@ function update(){
             vely = -vely;
             raqueta_sound.currentTime = 0;
             raqueta_sound.play();
-        } else {
+        } else if (y > 600) {
             velx = 0;
             vely = 0;
             x = 400;
