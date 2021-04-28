@@ -48,16 +48,16 @@ window.onkeydown = (e) => {
             vely = 1; 
         case 37:
             if (x2 <0){
-                x2 = x2 + 5;
+                x2 = x2 + 10;
             } else{
-                x2 = x2 - 5;
+                x2 = x2 - 10;
             }
             break;
         case 39:
             if (x2 <= canvas.width - 80){
-                x2 = x2 + 5;
+                x2 = x2 + 10;
             } else{
-                x2 = x2 - 5;
+                x2 = x2 - 10;
             }
     }
 }
@@ -100,11 +100,13 @@ function update(){
         rebote_sound.play();
     }
     if (y <= 70 || y > canvas.height - 50){
-        vely = -vely;
+        
         if (y <= 70){
+            vely = -vely;
             rebote_sound.currentTime = 0;
             rebote_sound.play();
-        } else if (y > canvas.height - 50){
+        } else if (x >= x2){
+            vely = -vely;
             raqueta_sound.currentTime = 0;
             raqueta_sound.play();
         }
