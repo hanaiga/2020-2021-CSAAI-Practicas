@@ -14,15 +14,13 @@ const izda = document.getElementById("izda");
 const dcha = document.getElementById("dcha");
 
 
-let x = 0;
+let x = 190;
 // la y la pongo a 100 para que no rebote por encima del texto de vida o puntos
-let y = 100;
+let y = 550;
 
 // defino la velicidad en direccion x
 let velx = 0;
 let vely = 0;
-let velx5 = 0;
-let vely5 = 0;
 
 // control de los botones
 
