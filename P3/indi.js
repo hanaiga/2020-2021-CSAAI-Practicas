@@ -16,6 +16,8 @@ const dcha = document.getElementById("dcha");
 const rebote_sound = new Audio('rebote.mp3');
 const raqueta_sound = new Audio('raqueta.mp3');
 
+
+
 let x = 190;
 // la y la pongo a 100 para que no rebote por encima del texto de vida o puntos
 let y = 550;
@@ -176,5 +178,4 @@ function update(){
 
 // llamo a la funion para que empieze a rular
 update();
-
 
