@@ -155,7 +155,7 @@ function update(){
                 vely = 0;
                 x2 = 225-30;
             }else if (vidas == 0){
-                loser_sound.currentTime = 0;
+                document.location.reload();
             }
     }
 
@@ -230,9 +230,13 @@ function update(){
                         ladrillos[i][j].visible = false;
                         tanto_sound.currentTime = 0;
                         tanto_sound.play();
-                        velx = -velx;
                         vely = -vely;
                         numLadrillos = numLadrillos + 1;
+                        if (numLadrillos == 63){
+                            win_sound.currentTime = 0;
+                            win_sound.play();
+                            
+                        }
                     }
                 }
             }
