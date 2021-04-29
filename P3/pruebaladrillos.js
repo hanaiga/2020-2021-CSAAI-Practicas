@@ -8,8 +8,8 @@ canvas.width = 450;
 canvas.height = 600;
 
 const ctx = canvas.getContext("2d");
-const start = document.getElementById("start");
-const stop = document.getElementById("stop");
+const pause = document.getElementById("pause");
+const cont = document.getElementById("cont");
 
 // sonidos
 const rebote_sound = new Audio('rebote.mp3');
@@ -30,11 +30,16 @@ let x2 = 225-30;
 
 let vidas = 3;
 
-stop.onclick = () => {
+pause.onclick = () => {
     velx = 0;
     vely = 0;
 }
-
+/*
+cont.onclick = () => {
+    velx = -3;
+    vely = -2;
+}
+*/
 // creo el objeto ladrillo
 
 const LADRILLO = {
