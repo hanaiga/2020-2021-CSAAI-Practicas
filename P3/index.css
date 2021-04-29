@@ -4,6 +4,7 @@ canvas{
     border-width: 5px;
     border-color: rgb(255, 255, 255);
     border-radius: 5px;
+    margin-left: 480px;
 }
 body{
     background-image: url("fondo.jpg");
@@ -35,4 +36,27 @@ h2{
     background-color: white;
     letter-spacing: 4px;
 
+}
+#pause{
+    border-radius: 10px;
+    background-color: rgb(236, 0, 0);
+    font-family: "Orbitron";
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 600px;
+    margin-top: 10px;
+
+}
+#cont{
+    border-radius: 10px;
+    background-color: rgb(236, 0, 0);
+    font-family: "Orbitron";
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    margin-left: 60px;
+    margin-top: 10px;
 }
