@@ -10,6 +10,7 @@ canvas.height = 600;
 const ctx = canvas.getContext("2d");
 const pause = document.getElementById("pause");
 const cont = document.getElementById("cont");
+const display = document.getElementById("display");
 
 // sonidos
 const rebote_sound = new Audio('rebote.mp3');
@@ -51,6 +52,12 @@ cont.onclick = () => {
     
 }
 
+function mensaje(){
+    display.innerHTML = "Pulsa la tecla ESPACIO para empezar la partida";
+    window.onkeyup = (e) => {
+        display.innerHTML = ""
+    }
+}
 // creo el objeto ladrillo
 
 const LADRILLO = {
@@ -143,6 +150,7 @@ function update(){
             raqueta_sound.play();
         }
     }else if (y > canvas.height + 10){
+        mensaje();
         x =-10;
         y = -10;
         loser_sound.currentTime = 0;
@@ -163,7 +171,7 @@ function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
         // vidas
     ctx.strokeStyle = 'red';
-    ctx.font = "15px Arial";
+    ctx.font = "20px Arial";
     ctx.strokeText("VIDAS: " + vidas , 320, 50);
 
         //puntos
@@ -235,6 +243,7 @@ function update(){
                         if (numLadrillos == 63){
                             win_sound.currentTime = 0;
                             win_sound.play();
+                            display.innerHTML = " ¡¡HAS GANADO!! "
                             
                         }
                     }
@@ -252,5 +261,5 @@ function update(){
 }
 
 
-
+ mensaje();
 update();
