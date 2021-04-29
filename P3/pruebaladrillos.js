@@ -10,11 +10,11 @@ canvas.height = 600;
 const ctx = canvas.getContext("2d");
 const start = document.getElementById("start");
 const stop = document.getElementById("stop");
-const izda = document.getElementById("izda");
-const dcha = document.getElementById("dcha");
 
+// sonidos
 const rebote_sound = new Audio('rebote.mp3');
 const raqueta_sound = new Audio('raqueta.mp3');
+const tanto_sound = new Audio('tanto.mp3');
 
 
 let x = 200;
@@ -31,6 +31,10 @@ stop.onclick = () => {
     vely = 0;
 }
 
+start.onclick = () => {
+    velx = 3;
+    vely = 2;
+}
 // creo el objeto ladrillo
 
 const LADRILLO = {
@@ -75,9 +79,6 @@ for (let i =0; i < LADRILLO.F; i++){
 // tecla para ir a la Izda
 window.onkeydown = (e) => {
     switch (e.keyCode){
-        case 32:
-            velx = 3;
-            vely = 1; 
         case 37:
             if (x2 <0){
                 x2 = x2 + 10;
@@ -201,6 +202,8 @@ function update(){
                 if ((y >= ladrillos[i][j].y) && (y <= ladrillos[i][j].y + 22)){
                     if ((x >= ladrillos[i][j].x) && (x <= ladrillos[i][j].x + 42)){
                         ladrillos[i][j].visible = false;
+                        tanto_sound.currentTime = 0;
+                        tanto_sound.play();
                         velx = -velx;
                         vely = -vely;
                     }
