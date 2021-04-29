@@ -32,15 +32,25 @@ let vidas = 3;
 let numLadrillos = 0;
 
 pause.onclick = () => {
+    coordenadas = [];
+    coordenadas.push(x);
+    coordenadas.push(y);
+    coordenadas.push(velx);
+    coordenadas.push(vely);
     velx = 0;
     vely = 0;
 }
-/*
+
 cont.onclick = () => {
-    velx = -3;
-    vely = -2;
+    x = coordenadas[0];
+    y = coordenadas[1];
+    velx = coordenadas[2];
+    vely = coordenadas[3];
+    x = x + velx;
+    y = y + vely;
+    
 }
-*/
+
 // creo el objeto ladrillo
 
 const LADRILLO = {
