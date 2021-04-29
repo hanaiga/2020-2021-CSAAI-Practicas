@@ -177,7 +177,7 @@ function update(){
         //puntos
 
     ctx.font = "20px Arial";
-    ctx.strokeStyle = 'yellow';
+    ctx.strokeStyle = 'white';
     ctx.strokeText("PUNTOS: " + numLadrillos , 20, 50);
   
      // dibujo la raqueta
@@ -187,7 +187,7 @@ function update(){
      ctx.rect(x2,570, 60,10);
 
          // le digo el color de relleno
-         ctx.fillStyle = 'black';
+         ctx.fillStyle = 'red';
 
          // aplico el relleno
          ctx.fill();
@@ -205,7 +205,7 @@ function update(){
         ctx.arc(x, y, 7, 0, 2 *Math.PI);
         ctx.strokeStyle = 'lightblue';
         ctx.lineWidht = 3;
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = 'white';
 
         ctx.stroke();
         ctx.fill();
@@ -221,7 +221,7 @@ function update(){
             if (ladrillos[i][j].visible){
                 ctx.beginPath();
                     ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
-                    ctx.fillStyle = 'lightblue'
+                    ctx.fillStyle = 'white'
                     ctx.fill();
                 ctx.closePath();
             }
