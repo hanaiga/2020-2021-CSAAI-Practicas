@@ -138,6 +138,8 @@ function update(){
                 velx = 0;
                 vely = 0;
                 x2 = 225-30;
+            }else if (vidas == 0){
+                document.location.reload();
             }
     }
 
