@@ -111,26 +111,21 @@ function update(){
         velx = -velx;
         rebote_sound.currentTime = 0;
         rebote_sound.play();
-    }
-    if (y <= 70 || y > canvas.height - 50){
-        if (y <= 70){
-            console.log(y);
+    }else if ( y <= 70){
+       vely = -vely;
+       rebote_sound.currentTime = 0;
+       rebote_sound.play();
+    }else if ((x > x2) && (x < x2 + 67)){
+        if ((y > 563) && (y < 587)){
+
             vely = -vely;
-            rebote_sound.currentTime = 0;
-            rebote_sound.play();
-        } else if (x >= x2){
-            console.log(x);
-            console.log(x2);
-            vely = -vely;
+            velx = -velx;
             raqueta_sound.currentTime = 0;
             raqueta_sound.play();
-        } else if (y > 600) {
-            velx = 0;
-            vely = 0;
-            x = 400;
-            y = 700;
         }
-
+    }else if (y > canvas.height + 20){
+        velx = 0;
+        vely = 0;
     }
 
     // borro canvas
@@ -180,7 +175,7 @@ function update(){
 
     
     // Dibujar los ladrillos
-
+    
     for (let i =0; i< LADRILLO.F; i++){
         for (let j=0; j< LADRILLO.C; j++){
             // le digo que si el ladrillo es visible se pinta
@@ -193,7 +188,7 @@ function update(){
             }
         }
     }
-
+        
 
     // Destruir ladrillos
     for (let i = 0; i<LADRILLO.F; i++){
@@ -211,6 +206,7 @@ function update(){
             }
         }
     }
+    
     
     x = x + velx;
     y = y + vely;
