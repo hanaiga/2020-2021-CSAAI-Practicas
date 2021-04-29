@@ -28,6 +28,8 @@ let velx = 0;
 let vely = 0;
 let x2 = 225-30;
 
+let vidas = 3;
+
 stop.onclick = () => {
     velx = 0;
     vely = 0;
@@ -129,6 +131,14 @@ function update(){
         y = -10;
         loser_sound.currentTime = 0;
         loser_sound.play();
+        vidas = vidas -1;
+            if (vidas >= 1){
+                x = 225; 
+                y = 550;
+                velx = 0;
+                vely = 0;
+                x2 = 225-30;
+            }
     }
 
     // borro canvas
@@ -136,7 +146,7 @@ function update(){
         // vidas
     ctx.strokeStyle = 'red';
     ctx.font = "15px Arial";
-    ctx.strokeText("VIDAS: 3", 320, 50);
+    ctx.strokeText("VIDAS:" + vidas , 320, 50);
 
         //puntos
 
