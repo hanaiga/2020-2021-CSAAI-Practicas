@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 
 
 // el tamaño del canvas 
-canvas.width = 400;
+canvas.width = 450;
 canvas.height = 600;
 
 const ctx = canvas.getContext("2d");
@@ -19,29 +19,25 @@ const loser_sound = new Audio('loser.mp3');
 const win_sound = new Audio ('win.mp3');
 
 
-let x = 200;
+let x = 225;
 // la y la pongo a 100 para que no rebote por encima del texto de vida o puntos
 let y = 550;
 
 // defino la velicidad en direccion x
 let velx = 0;
 let vely = 0;
-let x2 = 200-30;
+let x2 = 225-30;
 
 stop.onclick = () => {
     velx = 0;
     vely = 0;
 }
 
-start.onclick = () => {
-    velx = 3;
-    vely = 2;
-}
 // creo el objeto ladrillo
 
 const LADRILLO = {
-    F: 5, //numero de filas de ladrillos
-    C: 8, // numero de columnas 
+    F: 7, //numero de filas de ladrillos
+    C: 9, // numero de columnas 
     w: 35, // anchra del ladrillo
     h: 15, // altura del ladrillo
     padding: 10, // espacio al rededor de cada ladrillo
@@ -81,6 +77,9 @@ for (let i =0; i < LADRILLO.F; i++){
 // tecla para ir a la Izda
 window.onkeydown = (e) => {
     switch (e.keyCode){
+        case 32:
+            velx = 3;
+            vely = 2;
         case 37:
             if (x2 <0){
                 x2 = x2 + 10;
