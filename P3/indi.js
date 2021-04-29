@@ -108,25 +108,21 @@ function update(){
     // le resto el tamaño de la pelota para que no se vea como el rec sale 
 
      // rebote con laterales
-    if (x <0 || x >= canvas.width - 20 ){
+    if (x <0 || x >= canvas.width - 10 ){
         velx = -velx;
         rebote_sound.currentTime = 0;
         rebote_sound.play();
     }
      
     // rebote arriba
-    if (y <= 70){
+    if (y + vely <= 70){
         vely = -vely;
         rebote_sound.currentTime = 0;
          rebote_sound.play();
-    } 
-
-    // rebote con raqueta
-    if (((y >= 570) && (x == x2)) || ((y >= 570) && (x == (x2 + 10))) || ((y >=570) && (x == (x2-10)))){
-        velx = -velx;
-        vely = -vely;
-        raqueta_sound.currentTime = 0;
-        raqueta_sound.play();
+    } else if (y + vely > canvas.height -30){
+        if ( x > x2 && x < x2+60){
+            vely = -vely;
+        }
     }
 
     x = x + velx;
@@ -140,7 +136,7 @@ function update(){
     ctx.font = "15px Arial";
     ctx.strokeText("VIDAS: 3", 320, 50);
 
-        //puntos
+    //puntos
 
     ctx.font = "20px Arial";
     ctx.strokeStyle = 'yellow';

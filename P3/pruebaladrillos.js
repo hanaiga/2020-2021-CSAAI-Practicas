@@ -86,7 +86,7 @@ window.onkeydown = (e) => {
             }
             break;
         case 39:
-            if (x2 <= canvas.width - 80){
+            if (x2 <= canvas.width - 70){
                 x2 = x2 + 10;
             } else{
                 x2 = x2 - 10;
@@ -106,7 +106,7 @@ function update(){
     // ahora quiero que se mueva entonces defino el movimiento
     // para que no se salga del canvas y rebote
     // le resto el tamaño del rectangulo para que no se vea como el rec sale
-    if (x <0 || x >= canvas.width - 20 ){
+    if (x <0 || x >= canvas.width - 10 ){
         velx = -velx;
         rebote_sound.currentTime = 0;
         rebote_sound.play();
@@ -131,9 +131,6 @@ function update(){
         }
 
     }
-    x = x + velx;
-    y = y + vely;
-
 
     // borro canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -195,7 +192,26 @@ function update(){
             }
         }
     }
-   
+
+
+    // Destruir ladrillos
+    for (let i = 0; i<LADRILLO.F; i++){
+        for (let j = 0; j<LADRILLO.C; j++){
+            if(ladrillos[i][j].visible){
+                if ((y >= ladrillos[i][j].y) && (y <= ladrillos[i][j].y + 22)){
+                    if ((x >= ladrillos[i][j].x) && (x <= ladrillos[i][j].x + 42)){
+                        ladrillos[i][j].visible = false;
+                        velx = -velx;
+                        vely = -vely;
+                    }
+                }
+            }
+        }
+    }
+    
+    x = x + velx;
+    y = y + vely;
+
     // que vuelva a ejecutar update cuando le toque
     requestAnimationFrame(update);
 }
