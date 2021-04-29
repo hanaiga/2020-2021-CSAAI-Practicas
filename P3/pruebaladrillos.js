@@ -29,6 +29,7 @@ let vely = 0;
 let x2 = 225-30;
 
 let vidas = 3;
+let numLadrillos = 0;
 
 pause.onclick = () => {
     velx = 0;
@@ -144,7 +145,7 @@ function update(){
                 vely = 0;
                 x2 = 225-30;
             }else if (vidas == 0){
-                document.location.reload();
+                loser_sound.currentTime = 0;
             }
     }
 
@@ -153,13 +154,13 @@ function update(){
         // vidas
     ctx.strokeStyle = 'red';
     ctx.font = "15px Arial";
-    ctx.strokeText("VIDAS:" + vidas , 320, 50);
+    ctx.strokeText("VIDAS: " + vidas , 320, 50);
 
         //puntos
 
     ctx.font = "20px Arial";
     ctx.strokeStyle = 'yellow';
-    ctx.strokeText("PUNTOS TOTALES: 0000", 20, 50);
+    ctx.strokeText("PUNTOS: " + numLadrillos , 20, 50);
   
      // dibujo la raqueta
      ctx.beginPath();
@@ -221,6 +222,7 @@ function update(){
                         tanto_sound.play();
                         velx = -velx;
                         vely = -vely;
+                        numLadrillos = numLadrillos + 1;
                     }
                 }
             }
