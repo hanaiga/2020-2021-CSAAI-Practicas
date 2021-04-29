@@ -15,6 +15,8 @@ const stop = document.getElementById("stop");
 const rebote_sound = new Audio('rebote.mp3');
 const raqueta_sound = new Audio('raqueta.mp3');
 const tanto_sound = new Audio('tanto.mp3');
+const loser_sound = new Audio('loser.mp3');
+const win_sound = new Audio ('win.mp3');
 
 
 let x = 200;
@@ -123,9 +125,11 @@ function update(){
             raqueta_sound.currentTime = 0;
             raqueta_sound.play();
         }
-    }else if (y > canvas.height + 20){
-        velx = 0;
-        vely = 0;
+    }else if (y > canvas.height + 10){
+        x =-10;
+        y = -10;
+        loser_sound.currentTime = 0;
+        loser_sound.play();
     }
 
     // borro canvas
