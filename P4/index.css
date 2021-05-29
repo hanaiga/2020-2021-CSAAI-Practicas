@@ -1,6 +1,37 @@
-#foto{
-    background-color:white;
+@font-face {
+    font-family: "Dancing";
+    src: url(DancingScript-VariableFont_wght.ttf);
 }
+
+@font-face {
+    font-family: "Bungee";
+    src: url(BungeeOutline-Regular.ttf);
+}
+
 body{
-    background-color:white;
+    background-color:black;
+    color:white;
+    text-align: center;
+
+}
+h1{
+    color: white;
+    font-family: "Bungee";
+    font-size: 70px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h3{
+    color: pink;
+    font-family: "Dancing";
+    font-size: 40px;
+    margin-top: 15px;
+}
+.fotos{
+    text-align: center;
+    column-count: 2;
+}
+#disp{
+    color: white;
 }
