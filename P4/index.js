@@ -20,6 +20,9 @@ const reflejo_espejo = document.getElementById('reflejo_espejo');
 const reflejo_abajo = document.getElementById('reflejo_abajo');
 const ruido = document.getElementById('Ruido');
 
+// deslizadores
+const desp1 = document.getElementById('show');
+
 var reflex = false;
 var invert = false;
 // funcion que nos devuelve la imagen una vez cargada 100%
@@ -144,6 +147,15 @@ function filter_colores(){
     };
 }
 
+// Para que aparezcan los deslizadores
+function deslizadores_aparecer() {
+    var x = document.getElementById("show");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    }else{
+      x.style.display = "none";
+    }
+  }
 // filto de conversion de la imagen en grises
 function filter_grises(){
     // dibujamos la imagen original en el canvas 
@@ -236,6 +248,7 @@ colores.onclick = () =>{
     // vuelvo a dibujar la imagen original, por si acaso se selecciona antes el gris que vuelva a tener
     // color para que se usen los deslizadores
     ctx.drawImage(imgen, 0,0);
+    deslizadores_aparecer();
     deslizador_R.value = 255;
     deslizador_G.value = 255;
     deslizador_B.value = 255;
@@ -247,6 +260,7 @@ colores.onclick = () =>{
 grises.onclick = () =>{
     // vulevo a usar la imagen original no modificada por algun filtro
     ctx.drawImage(imgen, 0,0);
+    desp1.style.display = "none";
     display.innerHTML = '!! Este es el resultado de la imagen con el filtro de grises !!';
     filter_grises();
     resetear();
@@ -255,25 +269,31 @@ grises.onclick = () =>{
 negativo.onclick = () =>{
     // vulevo a usar la imagen original no modificada por algun filtro
     ctx.drawImage(imgen, 0,0);
+    desp1.style.display = "none";
     display.innerHTML = '!! Este es el resultado de la imagen con el filtro negativo !!';
     filter_negativo();
     resetear();
 }
 
 reflejo_espejo.onclick = () =>{
+    ctx.drawImage(imgen, 0,0);
     filter_reflejo_espejo();
+    desp1.style.display = "none";
     display.innerHTML = '!! Este es el resultado de duplicar la reflexión !!';
    
 }
 
 
 reflejo_abajo.onclick = () =>{
+    ctx.drawImage(imgen, 0,0);
     filter_reflejo_abajo();
+    desp1.style.display = "none";
     display.innerHTML = '!! Este es el resultado de invertir la imagen !!';
 }
 
 ruido.onclick = () =>{
     ctx.drawImage(imgen, 0,0);
+    desp1.style.display = "none";
     filter_ruido();
     display.innerHTML = '!! Este es el resultado de la imagen con ruido !!';
     resetear();
