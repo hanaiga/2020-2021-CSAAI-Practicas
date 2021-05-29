@@ -66,12 +66,15 @@ btn_off.onclick = () =>{
     Estado = 0;
 }
 
+// el primer video
 btn_video1.onclick = () =>{
     if(Estado == 1){
         directo.src= video1.src;
         directo.play();
     }
 }
+
+// el segundo video
 btn_video2.onclick = () =>{
     if(Estado == 1){
         directo.src= video2.src;
@@ -80,6 +83,7 @@ btn_video2.onclick = () =>{
 
 }
 
+// el tercer video
 btn_video3.onclick = () =>{
     if(Estado == 1){
         directo.src= video3.src;
@@ -87,6 +91,7 @@ btn_video3.onclick = () =>{
     }
 }
 
+// señal test
 btn_test.onclick = () =>{
     if(Estado == 1){
     directo.src = '';
