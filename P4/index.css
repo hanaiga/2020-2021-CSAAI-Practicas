@@ -14,6 +14,12 @@ body{
     text-align: center;
 
 }
+canvas{
+    border: 5px solid rgb(216, 84, 165);
+}
+#foto{
+    border: 5px solid rgb(216, 84, 165);
+}
 h1{
     color: white;
     font-family: "Bungee";
@@ -23,7 +29,7 @@ h1{
     margin-bottom: 10px;
 }
 h3{
-    color: pink;
+    color: rgb(255, 255, 255);
     font-family: "Dancing";
     font-size: 40px;
     margin-top: 15px;
@@ -34,4 +40,32 @@ h3{
 }
 #disp{
     color: white;
+}
+button {
+    box-shadow:inset 0px 1px 3px 0px #86ffff;
+      background:linear-gradient(to bottom, #eab4ff 5%, #ffbef4 100%);
+      background-color:#c6fdee;
+      border-radius:5px;
+      border:1px solid #f2fdb0;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:20px;
+      font-weight:bold;
+      padding:11px 23px;
+      text-decoration:none;
+      text-shadow:0px -1px 0px #1d9283;
+  }
+input[type=range] {
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 5px;
+    background: #9cc7c1;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    width: 220px;
+    -webkit-transition: width .35s ease-in-out;
+    transition: width .35s ease-in-out;
 }
