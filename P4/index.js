@@ -202,6 +202,13 @@ function filter_reflejo_espejo(){
     ctx.drawImage(imgen, 0,0);
 }
 
+// filtro de reflejo_abajo
+function filter_reflejo_abajo(){
+    ctx.drawImage(imgen, 0,0);
+    ctx.translate(canvas.height,0);
+    ctx.scale(-1,1);
+    ctx.drawImage(imgen, 0,0);
+}
 
 // Depende de que boton se pulsa, se llama a la opcion elegida
 colores.onclick = () =>{
@@ -233,5 +240,10 @@ negativo.onclick = () =>{
 reflejo_espejo.onclick = () =>{
     ctx.drawImage(imgen, 0,0);
     filter_reflejo_espejo();
+}
+
+reflejo_abajo.onclick = () =>{
+    ctx.drawImage(imgen, 0,0);
+    filter_reflejo_abajo();
 }
 console.log("END");
