@@ -16,9 +16,9 @@ const grises = document.getElementById('grises');
 const colores = document.getElementById('colores');
 const negativo = document.getElementById('negativo');
 const display = document.getElementById("display");
-const reflejo_abajo = document.getElementById('Reflejo_abajo');
-const reflejo_espejo = document.getElementById('Reflejo_espejo');
+const duplicado = document.getElementById('duplicado');
 
+var duplex = false;
 // funcion que nos devuelve la imagen una vez cargada 100%
 
 display.innerHTML = 'Pulsa uno de los botones para ver el efecto en la imagen';
@@ -195,55 +195,51 @@ function filter_negativo(){
 }
 
 // filtro de reflejo_espejo
-function filter_reflejo_espejo(){
+function filter_duplicado(){
     ctx.drawImage(imgen, 0,0);
     ctx.translate(canvas.width,0);
     ctx.scale(-1,1);
     ctx.drawImage(imgen, 0,0);
-}
-
-// filtro de reflejo_abajo
-function filter_reflejo_abajo(){
-    ctx.drawImage(imgen, 0,0);
-    ctx.translate(canvas.height,0);
-    ctx.scale(-1,1);
-    ctx.drawImage(imgen, 0,0);
+    duplex = true;
 }
 
 // Depende de que boton se pulsa, se llama a la opcion elegida
 colores.onclick = () =>{
     // vuelvo a dibujar la imagen original, por si acaso se selecciona antes el gris que vuelva a tener
     // color para que se usen los deslizadores
-    ctx.drawImage(imgen, 0,0);
     deslizador_R.value = 255;
     deslizador_G.value = 255;
     deslizador_B.value = 255;
     filter_colores();
     display.innerHTML = '!! Arrastra los selectores de cada componente para ver la diferencia de color !!';
-
+    if (duplex == true){
+        document.location.reload();
+    }
 }
 
 grises.onclick = () =>{
     // vulevo a usar la imagen original no modificada por algun filtro
-    ctx.drawImage(imgen, 0,0);
+
     display.innerHTML = '!! Este es el resultado de la imagen con el filtro de grises !!';
     filter_grises();
+    if (duplex == true){
+        document.location.reload();
+    }
 }
 
 negativo.onclick = () =>{
     // vulevo a usar la imagen original no modificada por algun filtro
-    ctx.drawImage(imgen, 0,0);
+
     display.innerHTML = '!! Este es el resultado de la imagen con el filtro negativo !!';
     filter_negativo();
+    if (duplex == true){
+        document.location.reload();
+    }
 }
 
-reflejo_espejo.onclick = () =>{
+duplicado.onclick = () =>{
     ctx.drawImage(imgen, 0,0);
-    filter_reflejo_espejo();
+    filter_duplicado();
 }
 
-reflejo_abajo.onclick = () =>{
-    ctx.drawImage(imgen, 0,0);
-    filter_reflejo_abajo();
-}
 console.log("END");
