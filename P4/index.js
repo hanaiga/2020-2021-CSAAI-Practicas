@@ -16,7 +16,8 @@ const grises = document.getElementById('grises');
 const colores = document.getElementById('colores');
 const negativo = document.getElementById('negativo');
 const display = document.getElementById("display");
-const duplicado = document.getElementById('duplicado');
+const reflejo_espejo = document.getElementById('reflejo_espejo');
+const reflejo_abajo = document.getElementById('reflejo_abajo');
 const ruido = document.getElementById('Ruido');
 
 var duplex = false;
@@ -188,11 +189,20 @@ function filter_negativo(){
     ctx.putImageData(imgData, 0,0);
 }
 
-// filtro de imagen duplicada
-function filter_duplicado(){
+// filtro de reflexion horizontal
+function filter_reflejo_espejo(){
     ctx.drawImage(imgen, 0,0);
     ctx.translate(canvas.width,0);
     ctx.scale(-1,1);
+    ctx.drawImage(imgen, 0,0);
+    duplex = true;
+}
+
+// filtro de inversion
+function filter_reflejo_abajo(){
+    ctx.drawImage(imgen, 0,0);
+    ctx.translate(0,canvas.height);
+    ctx.scale(1,-1);
     ctx.drawImage(imgen, 0,0);
     duplex = true;
 }
@@ -245,9 +255,16 @@ negativo.onclick = () =>{
     }
 }
 
-duplicado.onclick = () =>{
+reflejo_espejo.onclick = () =>{
     ctx.drawImage(imgen, 0,0);
-    filter_duplicado();
+    filter_reflejo_espejo();
+    display.innerHTML = '!! Este es el resultado de duplicar la imagen !!';
+}
+
+
+reflejo_abajo.onclick = () =>{
+    ctx.drawImage(imgen, 0,0);
+    filter_reflejo_abajo();
     display.innerHTML = '!! Este es el resultado de duplicar la imagen !!';
 }
 
