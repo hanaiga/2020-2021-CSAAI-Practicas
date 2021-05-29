@@ -70,7 +70,6 @@ function filter_colores(){
         }
         // actualizamos la imagen 
         ctx.putImageData(imgData, 0, 0);
-
     };
 
     // funcion retrollamada del deslizador verde
@@ -103,12 +102,8 @@ function filter_colores(){
                 data[i+2] = umbral_B;
             }    
         }
-
-
         // actualizamos la imagen para que salga el pixel pintado
         ctx.putImageData(imgData, 0, 0);
-
-
     };
 
     // funcion retrollamada del deslizador azul
@@ -141,10 +136,8 @@ function filter_colores(){
                 data[i+2] = umbral_B;
             }    
         }
-
         // actualizamos la imagen para que salga el pixel pintado
         ctx.putImageData(imgData, 0, 0);
-
 
     };
 }
@@ -195,7 +188,7 @@ function filter_negativo(){
     ctx.putImageData(imgData, 0,0);
 }
 
-// filtro de reflejo_espejo
+// filtro de imagen duplicada
 function filter_duplicado(){
     ctx.drawImage(imgen, 0,0);
     ctx.translate(canvas.width,0);
