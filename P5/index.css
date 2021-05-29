@@ -31,7 +31,7 @@ p{
 .fuentes{
     column-count: 3;
     text-align: center;
-    margin-top: 5px;
+    padding: 0px;
 }
 
 #botones{
@@ -85,5 +85,32 @@ p{
     color:rgb(0, 0, 0);
     margin-right: 20px;
 }
-
+#btn_src_on{
+    text-align: center;
+    font-family: "Anton";
+    width: 250px;
+    height: 50px;
+    font-weight: bolder;
+    border: 3px solid;
+    font-size: 20px;
+    background-color: rgb(138, 138, 138);
+    border-color: #ffffff;
+    color:rgb(24, 194, 32);
+    margin-right: 20px;
+    letter-spacing: 2px;
+}
+#btn_src_off{
+    text-align: center;
+    font-family: "Anton";
+    width: 250px;
+    height: 50px;
+    font-weight: bolder;
+    border: 3px solid;
+    font-size: 20px;
+    background-color: rgb(138, 138, 138);
+    border-color: #ffffff;
+    color:rgb(204, 29, 29);
+    margin-right: 20px;
+    letter-spacing: 2px;
+}
 
