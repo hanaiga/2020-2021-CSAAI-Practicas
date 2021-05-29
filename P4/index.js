@@ -20,7 +20,8 @@ const reflejo_espejo = document.getElementById('reflejo_espejo');
 const reflejo_abajo = document.getElementById('reflejo_abajo');
 const ruido = document.getElementById('Ruido');
 
-var duplex = false;
+var reflex = false;
+var invert = false;
 // funcion que nos devuelve la imagen una vez cargada 100%
 
 display.innerHTML = 'Pulsa uno de los botones para ver el efecto en la imagen';
@@ -191,20 +192,18 @@ function filter_negativo(){
 
 // filtro de reflexion horizontal
 function filter_reflejo_espejo(){
-    ctx.drawImage(imgen, 0,0);
     ctx.translate(canvas.width,0);
     ctx.scale(-1,1);
     ctx.drawImage(imgen, 0,0);
-    duplex = true;
+    reflex = true;
 }
 
 // filtro de inversion
 function filter_reflejo_abajo(){
-    ctx.drawImage(imgen, 0,0);
     ctx.translate(0,canvas.height);
     ctx.scale(1,-1);
     ctx.drawImage(imgen, 0,0);
-    duplex = true;
+    invert = true;
 }
 
 function filter_ruido(){
@@ -220,6 +219,18 @@ function filter_ruido(){
         //actualizo la imagen
         ctx.putImageData(imgData, 0,0);
 }
+
+function resetear(){
+    if(invert == true){
+        filter_reflejo_abajo();
+        invert = false;
+    }
+    if (reflex == true){
+        filter_reflejo_espejo();
+        reflex = false;
+    }
+}
+
 // Depende de que boton se pulsa, se llama a la opcion elegida
 colores.onclick = () =>{
     // vuelvo a dibujar la imagen original, por si acaso se selecciona antes el gris que vuelva a tener
@@ -230,9 +241,7 @@ colores.onclick = () =>{
     deslizador_B.value = 255;
     filter_colores();
     display.innerHTML = '!! Arrastra los selectores de cada componente para ver la diferencia de color !!';
-    if (duplex == true){
-        document.location.reload();
-    }
+    resetear();
 }
 
 grises.onclick = () =>{
@@ -240,9 +249,7 @@ grises.onclick = () =>{
     ctx.drawImage(imgen, 0,0);
     display.innerHTML = '!! Este es el resultado de la imagen con el filtro de grises !!';
     filter_grises();
-    if (duplex == true){
-        document.location.reload();
-    }
+    resetear();
 }
 
 negativo.onclick = () =>{
@@ -250,30 +257,25 @@ negativo.onclick = () =>{
     ctx.drawImage(imgen, 0,0);
     display.innerHTML = '!! Este es el resultado de la imagen con el filtro negativo !!';
     filter_negativo();
-    if (duplex == true){
-        document.location.reload();
-    }
+    resetear();
 }
 
 reflejo_espejo.onclick = () =>{
-    ctx.drawImage(imgen, 0,0);
     filter_reflejo_espejo();
-    display.innerHTML = '!! Este es el resultado de duplicar la imagen !!';
+    display.innerHTML = '!! Este es el resultado de duplicar la reflexión !!';
+   
 }
 
 
 reflejo_abajo.onclick = () =>{
-    ctx.drawImage(imgen, 0,0);
     filter_reflejo_abajo();
-    display.innerHTML = '!! Este es el resultado de duplicar la imagen !!';
+    display.innerHTML = '!! Este es el resultado de invertir la imagen !!';
 }
 
 ruido.onclick = () =>{
     ctx.drawImage(imgen, 0,0);
     filter_ruido();
-    if (duplex == true){
-        document.location.reload();
-    }
     display.innerHTML = '!! Este es el resultado de la imagen con ruido !!';
+    resetear();
 }
 console.log("END");
