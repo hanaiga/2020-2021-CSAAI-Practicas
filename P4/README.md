@@ -13,4 +13,5 @@ FUNCIONALIDAD:
     -- En los otros filtos, el resultado se obtiene solo pulsando el boton. 
 
 MEJORAS: 
- -- Filtros adicionales: Especular, boca abajo, ruido y negativo de la imagen. 
+ -- Filtros adicionales: Especular, boca abajo, ruido y negativo de la imagen.
+ -- Mensaje informativo cada vez que se aplica un filto.
