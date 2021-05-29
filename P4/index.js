@@ -17,6 +17,7 @@ const colores = document.getElementById('colores');
 const negativo = document.getElementById('negativo');
 const display = document.getElementById("display");
 const duplicado = document.getElementById('duplicado');
+const ruido = document.getElementById('Ruido');
 
 var duplex = false;
 // funcion que nos devuelve la imagen una vez cargada 100%
@@ -203,10 +204,24 @@ function filter_duplicado(){
     duplex = true;
 }
 
+function filter_ruido(){
+    ctx.drawImage(imgen, 0,0);
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data;
+    for( let i = 0; i<data.length; i+=4){
+        let rand = (Math.random() * 250);
+        data[i] = data[i] + rand;
+        data[i+1] = data[i+1] + rand;
+        data[i+2] = data[i+2] + rand;
+    }
+        //actualizo la imagen
+        ctx.putImageData(imgData, 0,0);
+}
 // Depende de que boton se pulsa, se llama a la opcion elegida
 colores.onclick = () =>{
     // vuelvo a dibujar la imagen original, por si acaso se selecciona antes el gris que vuelva a tener
     // color para que se usen los deslizadores
+    ctx.drawImage(imgen, 0,0);
     deslizador_R.value = 255;
     deslizador_G.value = 255;
     deslizador_B.value = 255;
@@ -219,7 +234,7 @@ colores.onclick = () =>{
 
 grises.onclick = () =>{
     // vulevo a usar la imagen original no modificada por algun filtro
-
+    ctx.drawImage(imgen, 0,0);
     display.innerHTML = '!! Este es el resultado de la imagen con el filtro de grises !!';
     filter_grises();
     if (duplex == true){
@@ -229,7 +244,7 @@ grises.onclick = () =>{
 
 negativo.onclick = () =>{
     // vulevo a usar la imagen original no modificada por algun filtro
-
+    ctx.drawImage(imgen, 0,0);
     display.innerHTML = '!! Este es el resultado de la imagen con el filtro negativo !!';
     filter_negativo();
     if (duplex == true){
@@ -240,6 +255,15 @@ negativo.onclick = () =>{
 duplicado.onclick = () =>{
     ctx.drawImage(imgen, 0,0);
     filter_duplicado();
+    display.innerHTML = '!! Este es el resultado de duplicar la imagen !!';
 }
 
+ruido.onclick = () =>{
+    ctx.drawImage(imgen, 0,0);
+    filter_ruido();
+    if (duplex == true){
+        document.location.reload();
+    }
+    display.innerHTML = '!! Este es el resultado de la imagen con ruido !!';
+}
 console.log("END");
