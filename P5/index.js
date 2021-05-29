@@ -14,11 +14,11 @@ const btn_off = document.getElementById('btn_src_off');
 // establecemos el tamaño o dimension de los videos
 directo.width = 620;
 directo.height = 420;
-video1.width = 480;
+video1.width = 450;
 video1.height = 300;
-video2.width = 480;
+video2.width = 450;
 video2.height = 300;
-video3.width = 480;
+video3.width = 450;
 video3.height = 300;
 
 let Estado = 0;
