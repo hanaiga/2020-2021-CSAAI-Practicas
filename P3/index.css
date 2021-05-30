@@ -37,15 +37,16 @@ h2{
     letter-spacing: 4px;
 
 }
+#pause_play{
+    text-align: center;
+}
 #pause{
     border-radius: 10px;
     background-color: rgb(236, 0, 0);
     font-family: "Orbitron";
     color: white;
     padding: 5px;
-    text-align: center;
     font-size: 15px;
-    margin-left: 630px;
     margin-top: 10px;
 
 }
@@ -55,8 +56,6 @@ h2{
     font-family: "Orbitron";
     color: white;
     padding: 5px;
-    text-align: center;
     font-size: 15px;
-    margin-left: 20px;
     margin-top: 8px;
 }
