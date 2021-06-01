@@ -1,7 +1,8 @@
 body{
-    background-image: url("fondocv.jpg");
+    background-image: url("fondocv.jpg"); /* foto de fondo del cv */
   }
 
+     /*estilo del parrafo de perfil*/
  p{
     background-color: white;
     color: rgb(0, 0, 0);
@@ -9,18 +10,24 @@ body{
     margin:30px; /* para que se separe de los lados */
     padding: 5px; /* distancia del texto al bloque */
  }
+
+    /*Estilo de los titulos de los apartados del cv */
   h2{
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 8px; /* separado entre letras */
     font-size: 30px;
   }
+
+      /* estilo del título principal del cv (Enrico Materrazi) */
   .titulo{
     text-align: center;
     font-size: 50px;
     letter-spacing: 30px;
     font-family: fantasy;
   }
+
+     /*estilo del bloque que va a la derecha, imagen perfil y contacto */
   #dcha{
     float: right;
     text-align: center;
@@ -29,6 +36,8 @@ body{
     background-color: rgb(0, 0, 0);
     min-height: 50vh;
   }
+
+    /*estilo de las listas */
   ul{
     background-color: white;
     color: black;
@@ -39,6 +48,8 @@ body{
     text-align: left;
     padding-left: 20px;
   }
+
+  /*estilo del bloque izquierdo, esudios, experiencia idiomas y mas info */
 #izda{
     float: left;
     text-align: center;
@@ -47,6 +58,8 @@ body{
     background-color: rgba(0, 0, 0, 0.705);
     min-height: 50vh;
 }
+
+/*estilo del boton */
 .btn h1{
   background-color: black;
   color: white;
